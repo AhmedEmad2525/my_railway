@@ -25,15 +25,15 @@ class Prediction(Model):
 
 DB.create_tables([Prediction], safe=True)
 
-with open('/tmp/columns.json') as fh:
+with open('tmp/columns.json') as fh:
     columns = json.load(fh)
 
 
-with open('/tmp/dtypes.pickle', 'rb') as fh:
+with open('tmp/dtypes.pickle', 'rb') as fh:
     dtypes = pickle.load(fh)
 
 
-pipeline = joblib.load('/tmp/pipeline.pickle')
+pipeline = joblib.load('tmp/pipeline.pickle')
 
 
 app = Flask(__name__)
